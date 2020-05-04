@@ -1,0 +1,21 @@
+<button type="button" id="mobile-nav-toggle" (click)="showMiniMenu()">
+    <i class="fa fa-bars" *ngIf="!showMenu"></i>
+    <i class="fa fa-times" *ngIf="showMenu"></i>
+</button>
+<nav id="mobile-nav" style="left: 0;" *ngIf="showMenu">
+    <ul>
+        <li class="menu-has-children language">
+            <a href="javascript:void(0);">{{"LANGUAGE"|translate}}</a>
+            <ul>
+                <li><a href="javascript:void(0);" (click)="changeEn();showMenu=false">English</a></li>
+                <li><a href="javascript:void(0);" (click)="changeCn();showMenu=false">简体中文</a></li>
+            </ul>
+        </li>
+        <li><a (click)="showMenu=false" [routerLink]="['/news']">{{"HEADER.NEWS"|translate}}</a></li>
+        <li><a (click)="showMenu=false" [routerLink]="['/courses']">{{"HEADER.EDUCATION"|translate}}</a></li>
+        <li><a (click)="showMenu=false" [routerLink]="['/exhibition']">{{"HEADER.EXHIBITION"|translate}}</a></li>
+        <li><a (click)="showMenu=false" [routerLink]="['/events']">{{"HEADER.EVENTS"|translate}}</a></li>
+    </ul>
+</nav>
+<div id="mobile-body-overly" style="display: block" *ngIf="showMenu"></div>
+

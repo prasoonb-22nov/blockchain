@@ -1,0 +1,686 @@
+<button type="button" id="mobile-nav-toggle" (click)="showMiniMenu()">
+    <i class="fa fa-bars" *ngIf="!showMenu"></i>
+    <i class="fa fa-times" *ngIf="showMenu"></i>
+</button>
+<nav id="mobile-nav" style="left: 0;" *ngIf="showMenu">
+    <ul>
+        <!-- <li class="menu-has-children language">
+            <a href="javascript:void(0);">{{"LANGUAGE"|translate}}</a>
+            <ul>
+                <li><a href="javascript:void(0);" (click)="changeEn();showMenu=false">English</a></li>
+                <li><a href="javascript:void(0);" (click)="changeCn();showMenu=false">简体中文</a></li>
+            </ul>
+        </li> -->
+       <!--  <li><a (click)="showMenu=false" [routerLink]="['/news']">{{"HEADER.NEWS"|translate}}</a></li> -->
+        <li><a (click)="showMenu=false" [routerLink]="['/courses']">{{"HEADER.EDUCATION"|translate}}</a></li>
+        <!-- <li><a (click)="showMenu=false" [routerLink]="['/exhibition']">{{"HEADER.EXHIBITION"|translate}}</a></li> -->
+        <li><a (click)="showMenu=false" [routerLink]="['/events']">{{"HEADER.EVENTS"|translate}}</a></li>
+        <li><a (click)="showMenu=false" [routerLink]="['/incubator']">{{"HEADER.INCUBATOR"|translate}}</a></li>
+    </ul>
+</nav>
+<div id="mobile-body-overly" style="display: block" *ngIf="showMenu"></div>
+
+
+<!--==========================
+  Header
+============================-->
+<header id="header">
+    <div class="container">
+
+        <div class="pull-left" id="logo">
+            <h1>
+                <a class="scrollto" routerLink="/">
+                    <div></div>
+                </a>
+            </h1>
+
+        </div>
+       <!--  <div class="pull-left dropdown bc-menu">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                {{"LANGUAGE"|translate}}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item" type="button" (click)="changeEn()">English</button>
+                <button class="dropdown-item" type="button" (click)="changeCn()">简体中文</button>
+            </div>
+        </div> -->
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <!--<li class="menu-has-children language">-->
+                <!--<a href="javascript:void(0);">{{"LANGUAGE"|translate}}</a>-->
+                <!--<ul>-->
+                <!--<li><a href="javascript:void(0);" (click)="changeEn()">English</a></li>-->
+                <!--<li><a href="javascript:void(0);" (click)="changeCn()">简体中文</a></li>-->
+                <!--</ul>-->
+                <!--</li>-->
+                <!-- <li><a [routerLink]="['/news']">{{"HEADER.NEWS"|translate}}</a></li> -->
+                <li><a [routerLink]="['/courses']">{{"HEADER.EDUCATION"|translate}}</a></li>
+                <!-- <li><a [routerLink]="['/exhibition']">{{"HEADER.EXHIBITION"|translate}}</a></li> -->
+                <li><a [routerLink]="['/events']">{{"HEADER.EVENTS"|translate}}</a></li>
+                <li><a [routerLink]="['/incubator']">{{"HEADER.INCUBATOR"|translate}}</a></li>
+                <!--<li><a href="#contact">Contact</a></li>-->
+            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+
+<!--==========================
+  Intro Section
+============================-->
+<section id="intro">
+    <div class="intro-container">
+        <div class="carousel slide carousel-fade" data-ride="carousel" id="introCarousel">
+
+            <ol class="carousel-indicators-banners"></ol>
+
+            <div class="carousel-inner" role="listbox">
+
+                <div class="carousel-item active" style="background-image: url('assets/images/banner.png');">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 class="welcome" style="font-size: 80px">{{"HOME.WELCOME_TO"|translate}}</h2>
+                            <p style="font-size: 16px;">{{"HOME.CONTENT"|translate}}</p>
+                            <!--<a class="btn-get-started scrollto" href="#featured-services">Get Started</a>-->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <a class="carousel-control-prev" data-slide="prev" href="#introCarousel" role="button">
+                <span aria-hidden="true" class="carousel-control-prev-icon ion-chevron-left"></span>
+                <span class="sr-only">{{"HOME.PREVIOUS"|translate}}</span>
+            </a>
+
+            <a class="carousel-control-next" data-slide="next" href="#introCarousel" role="button">
+                <span aria-hidden="true" class="carousel-control-next-icon ion-chevron-right"></span>
+                <span class="sr-only">{{"HOME.NEXT"|translate}}</span>
+            </a>
+
+        </div>
+    </div>
+</section><!-- #intro -->
+
+<main id="main">
+
+    <!--==========================
+      About Us Section
+    ============================-->
+    <section id="about">
+        <div class="container">
+
+            <div class="green-line"></div>
+            <header class="section-header" data-aos="fade-right">
+                <p class="" style="text-align: left;width: 80%;">
+                    {{"HOME.BLOCKCHAIN_CENTRE_IS"|translate}}
+                </p>
+            </header>
+
+            <div class="row about-col" data-aos="fade-left">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-5 col-sm-12 about-content">
+                    <p>
+                        {{"HOME.BLOCKCHAIUN_CENTRE_ON"|translate}}
+                    </p>
+
+                </div>
+                <div class="col-md-5 col-sm-12 about-content">
+                    <p>
+                        {{"HOME.BLOCKCHAIN_CENTRE_BRINGS"|translate}}
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section><!-- #about -->
+
+    <!--==========================
+     what-do-we-do Section
+   ============================-->
+    <section id="what-do-we-do">
+        <div class="container" style="position: relative;">
+            <div class="green-line"></div>
+            <header class="section-header">
+                <p class="" style="text-align: left;">
+                    {{"HOME.WHAT_DO_WE_DO"|translate}}
+                </p>
+            </header>
+            <div class="questions">
+                <ul>
+                    <li>{{"HOME.EVENTS_COMMUNITY"|translate}}</li>
+                    <li>{{"HOME.EDUCATION_TRAINING"|translate}}</li>
+                    <li>{{"HOME.INCUBATION_PROGRAM"|translate}}</li>
+                    <li>{{"HOME.TALENT_POOL"|translate}}</li>
+                    <li>{{"HOME.CROSS_BORDER"|translate}}</li>
+                </ul>
+            </div>
+            <div class="scroll-images">
+                <div class="item-container">
+                    <div class="items" data-aos="fade-left">
+                        <div class="item">
+                            <img src="assets/images/Events&Community.png" alt="" class="item__img">
+                            <a class="item__link">{{"HOME.EVENTS_COMMUNITY"|translate}}</a>
+                        </div>
+                        <div class="item">
+                            <img src="assets/images/Education&Training.png" alt="" class="item__img">
+                            <a class="item__link">{{"HOME.EDUCATION_TRAINING"|translate}}</a>
+                        </div>
+                        <div class="item">
+                            <img src="assets/images/IncubationProgram.png" alt="" class="item__img">
+                            <a class="item__link">{{"HOME.INCUBATION_PROGRAM"|translate}}</a>
+                        </div>
+                        <div class="item">
+                            <img src="assets/images/TalentPool.png" alt="" class="item__img">
+                            <a class="item__link">{{"HOME.TALENT_POOL"|translate}}</a>
+                        </div>
+                        <div class="item">
+                            <img src="assets/images/CrossBorderCollaboration.png" alt="" class="item__img">
+                            <a class="item__link">{{"HOME.CROSS_BORDER"|translate}}</a>
+                        </div>
+                        <div class="item">
+                            <img src="assets/images/Events&Community.png" alt="" class="item__img">
+                            <a class="item__link">{{"HOME.EVENTS_COMMUNITY"|translate}}</a>
+                        </div>
+                    </div>
+                    <div style="position: absolute; bottom: -34px; left: 32px;">
+                        <button class="slider slider--left scroll-disable">
+                            <i class="fa fa-angle-left"></i>
+                        </button>
+                        <button class="slider slider--right">
+                            <i class="fa fa-angle-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section><!-- #what-do-we-do -->
+
+
+    <section id="world-locations">
+        <div class="container">
+            <div style="text-align: center">
+                <div style="display: inline-block" class="green-line"></div>
+            </div>
+            <header class="section-header" data-aos="fade-right">
+                <p class="" style="text-align: center;">
+                    {{"HOME.WORLD_LOCATIONS"|translate}}
+                </p>
+            </header>
+            <div class="map-container" *ngIf="language==='en'">
+                <img src="assets/images/world-map-1500.png">
+                <div class="point colombia tippy"
+                     title="Medellin<p>Calle 10B #35-50, Medellin， Antioquia 050001， CO</p><p><img src='assets/images/globalBC/gelunbibya.jpg'></p>"
+                     appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point newyork tippy"
+                     title="New York" appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point vilnius tippy"
+                     title="Vilnius<p>Upes str. 21， Vilnius ， Vilnius 08128， LT</p><p><img src='assets/images/globalBC/litaowan.jpeg'></p>"
+                     appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point mexico tippy"
+                     title="Moscow<p>2-Y Donskoy Proyezd, 9 строение 3, Moskva, Russia, 115419</p><p><img src='assets/images/globalBC/mosike.jpg'></p>"
+                     appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point dubai tippy"
+                     title="Dubai<p>Emirates Tower-Business Tower-Area 2071, Dubai</p><p><img src='assets/images/globalBC/dibai.jpg'></p>"
+                     appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point suzhou tippy"
+                     title="Suzhou<p>Level 6，Building 5, 328 Xinghu Street, Industry Park, Suzhou.</p><p><img src='assets/images/globalBC/suzhou.jpg'></p>"
+                     appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point shanghai tippy"
+                     title="Shanghai<p>Room 101,Building 3,Yuyuan Road No.546,Jing'an District,Shanghai</p><p><img src='assets/images/globalBC/shanghai.JPG'></p>"
+                     appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point perth tippy"
+                     title="Perth<p>L2 66 Kings Park Road,West Perth, WA 6005,Australia</p>" appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point sydeny tippy"
+                     title="Sydney<p>Level 12/255 Pitt St, Sydney NSW 2000, Australia</p><p><img src='assets/images/globalBC/xini.jpg'></p>"
+                     appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point melbourne tippy"
+                     title="Melbourne<p>Blockchain Centre</p><p>@ Stone & Chalk</p><p>Good Shed North</p><p>710 Collins Street</p><p>Docklands VIC, Australia 3008</p><p><img src='assets/images/globalBC/moerben.jpg'></p>"
+                     appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point singapore tippy"
+                     title="Singapore<p>Odeon Towers, District 6,331 North Bridge Road#02-01</p><p><img src='assets/images/globalBC/xinjiapo.png'></p>"
+                     appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point toronto tippy"
+                     title="Toronto" appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point malaysia tippy"
+                     title="Kuala Lumpur<p>Glo Damansara Mall</p><p>Lot 1.02 Level 1</p><p>Jalan Damansara, 60000,</p><p>Kuala Lumpur,</p><p>Wilayah Persekutuan,Malaysia</p><p><img src='assets/images/globalBC/malaixiya.jpg'></p>"
+                     appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+            </div>
+            <div class="map-container" *ngIf="language==='zh-cn'">
+                <img src="assets/images/world-map-1500.png">
+                <div class="point colombia tippy"
+                     title="哥伦比亚 <p>Calle 10B #35-50, Medellin， Antioquia 050001， CO</p><p><img src='assets/images/globalBC/gelunbibya.jpg'></p>"
+                     appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point newyork tippy"
+                     title="纽约 " appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point vilnius tippy"
+                     title="立陶宛 <p>Upes str. 21， Vilnius ， Vilnius 08128， LT</p><p><img src='assets/images/globalBC/litaowan.jpeg'></p>"
+                     appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point mexico tippy"
+                     title="莫斯科 <p>2-Y Donskoy Proyezd, 9 строение 3, Moskva, Russia, 115419</p><p><img src='assets/images/globalBC/mosike.jpg'></p>"
+                     appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point dubai tippy"
+                     title="迪拜 <p>Emirates Tower-Business Tower-Area 2071, Dubai</p><p><img src='assets/images/globalBC/dibai.jpg'></p>"
+                     appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point suzhou tippy"
+                     title="苏州 <p>Level 6，Building 5, 328 Xinghu Street, Industry Park, Suzhou.</p><p><img src='assets/images/globalBC/suzhou.jpg'></p>"
+                     appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point shanghai tippy"
+                     title="上海 <p>Room 101,Building 3,Yuyuan Road No.546,Jing'an District,Shanghai</p><p><img src='assets/images/globalBC/shanghai.JPG'></p>"
+                     appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point perth tippy"
+                     title="珀斯 <p>L2 66 Kings Park Road,West Perth, WA 6005,Australia</p>" appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point sydeny tippy"
+                     title="悉尼 <p>Level 12/255 Pitt St, Sydney NSW 2000, Australia</p><p><img src='assets/images/globalBC/xini.jpg'></p>"
+                     appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point melbourne tippy"
+                     title="墨尔本 <p>Blockchain Centre</p><p>@ Stone & Chalk</p><p>Good Shed North</p><p>710 Collins Street</p><p>Docklands VIC, Australia 3008</p><p><img src='assets/images/globalBC/moerben.jpg'></p>"
+                     appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point singapore tippy"
+                     title="新加坡 <p>Odeon Towers, District 6,331 North Bridge Road#02-01</p><p><img src='assets/images/globalBC/xinjiapo.png'></p>"
+                     appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point toronto tippy"
+                     title="多伦多 " appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+                <div class="point malaysia tippy"
+                     title="马来西亚 <p>Glo Damansara Mall</p><p>Lot 1.02 Level 1</p><p>Jalan Damansara, 60000,</p><p>Kuala Lumpur,</p><p>Wilayah Persekutuan,Malaysia</p><p><img src='assets/images/globalBC/malaixiya.jpg'></p>"
+                     appTippy
+                     [tippyOptions]="{arrow:true, arrowType:'round', theme:'light'}"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="Mission-Vision-Positioning">
+        <div class="container">
+            <!--<header class="section-header">-->
+            <!--<h3 class="section-title">Our Portfolio</h3>-->
+            <!--</header>-->
+            <div class="row portfolio-container">
+                <div class="col-lg-4 col-md-6 portfolio-item" data-aos="fade-up">
+                    <div class="portfolio-wrap">
+                        <figure>
+                            <img src="assets/images/Mission.png" class="img-fluid" alt="">
+                        </figure>
+
+                        <div class="portfolio-info">
+                            <h4>{{"HOME.MISSION"|translate}}</h4>
+                            <p>
+                                {{"HOME.CONSTRUCTING_A_BLOCKCHAIN"|translate}}
+                            </p>
+                            <p>&nbsp;</p>
+                            <p>
+                                {{"HOME.BUILDING_AN"|translate}}
+                            </p>
+                            <p>&nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item" data-aos="fade-up">
+                    <div class="portfolio-wrap">
+                        <figure>
+                            <img src="assets/images/Vision.png" class="img-fluid" alt="">
+                        </figure>
+
+                        <div class="portfolio-info">
+                            <h4>{{"HOME.VISION"|translate}}</h4>
+                            <p>
+                                {{"HOME.PROMOTING_INTERNATIONAL"|translate}}
+                            </p>
+                            <p>&nbsp;</p>
+                            <p>
+                                {{"HOME.ENHANCING_THE"|translate}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item" data-aos="fade-up">
+                    <div class="portfolio-wrap">
+                        <figure>
+                            <img src="assets/images/Positioning.png" class="img-fluid" alt="">
+                        </figure>
+
+                        <div class="portfolio-info">
+                            <h4>{{"HOME.POSITIONING"|translate}}</h4>
+                            <p>
+                                {{"HOME.SYSTEM_PLATFORM"|translate}}
+                            </p>
+                            <p>&nbsp;</p>
+                            <P>
+                                {{"HOME.POPULARIZING_BLOCKCHAIN"|translate}}
+                            </P>
+                            <p>&nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <div class="about-us" fxHide.lt-md="true">
+        <div id="about-us-container">
+            <img src="assets/images/aboutus.jpeg">
+            <div class="cover-icon">
+                <img src="assets/images/donate.png">
+            </div>
+            <div class="cover-title">
+                <div style="width:72px;height:4px;background:rgba(255,255,255,1);"></div>
+                <p>{{"HOME.ABOUT_US"|translate}}</p>
+            </div>
+            <div class="intro-container cover">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" style="background-color:rgba(0, 0, 0, 0);">
+                            <div class="carousel-container">
+                                <div class="carousel-content">
+                                    <p>{{"HOME.THE_BLOCKCHAIN_CENTRE"|translate}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item" style="background-color:rgba(0, 0, 0, 0);">
+                            <div class="carousel-container">
+                                <div class="carousel-content">
+                                    <p>{{"HOME.BLOCKCHAIN_CENTRE_TEAMED"|translate}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item" style="background-color:rgba(0, 0, 0, 0);">
+                            <div class="carousel-container">
+                                <div class="carousel-content">
+                                    <p>
+                                        {{"HOME.THE_CHOICE_OF"|translate}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item" style="background-color:rgba(0, 0, 0, 0);">
+                            <div class="carousel-container">
+                                <div class="carousel-content">
+                                    <p>
+                                        {{"HOME.CONTINUOUS_COMMUNITY"|translate}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item" style="background-color:rgba(0, 0, 0, 0);">
+                            <div class="carousel-container">
+                                <div class="carousel-content">
+                                    <p>
+                                        {{"HOME.RELYING_ON_A"|translate}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div style="height: 300px;" fxHide.lt-md="true" class="about-welcome">
+    </div>
+    <section id="Welcome-cooperation">
+        <div class="green-line"></div>
+        <header class="section-header">
+            <p class="" style="text-align: left;">
+                {{"HOME.WELCOME_COOPERATION"|translate}}
+            </p>
+        </header>
+        <div class="welcome-content">
+            {{"HOME.AS_THE_WORLD"|translate}}
+        </div>
+    </section>
+
+
+    <section id="Meet-the-team" fxHide.lt-md="true">
+        <div class="row">
+            <div class="col col-lg-4 left">
+
+            </div>
+            <div class="col col-lg-8 right">
+                <div class="title">{{"HOME.MEET_THE_TEAM"|translate}}</div>
+                <div>
+                    <img src="assets/images/bc-logo-color2@2x.png">
+                </div>
+            </div>
+            <div class="profile profile-sam" data-aos="fade-up">
+                <div class="profile-left">
+                    <div class="avatar">
+                        <img src="assets/images/Sam Lee.png">
+                    </div>
+                    <div class="name">
+                        {{"HOME.SAM_LEE"|translate}}
+                    </div>
+                </div>
+                <div class="profile-right">
+                    <div class="header">
+                        {{"HOME.FOUNDER"|translate}}
+                    </div>
+                    <div class="body">
+                        {{"HOME.SAM_LEE_IS_THE"|translate}}
+                    </div>
+                </div>
+            </div>
+            <div class="profile profile-layla" data-aos="fade-up">
+                <div class="profile-left">
+                    <div class="avatar">
+                        <img src="assets/images/Layla Dong.png">
+                    </div>
+                    <div class="name">
+                        {{"HOME.LAYLA_DONG"|translate}}
+                    </div>
+                </div>
+                <div class="profile-right">
+                    <div class="header">
+                        {{"HOME.INDEPENDENT_DIRECTOR"|translate}}
+                    </div>
+                    <div class="body">
+                        {{"HOME.LEADING_THE_TEAM"|translate}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Meet-the-team-mobile" fxHide.gt-sm="true">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="profile-left">
+                        <div class="avatar">
+                            <img src="assets/images/Sam Lee.png">
+                        </div>
+                        <div class="name">
+                            {{"HOME.SAM_LEE"|translate}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="profile-right">
+                        <div class="header">
+                            {{"HOME.FOUNDER"|translate}}
+                        </div>
+                        <div class="body">
+                            {{"HOME.SAM_LEE_IS_THE"|translate}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px;">
+                <div class="col-md-6">
+                    <div class="profile-left">
+                        <div class="avatar">
+                            <img src="assets/images/Layla Dong.png">
+                        </div>
+                        <div class="name">
+                            {{"HOME.LAYLA_DONG"|translate}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="profile-right">
+                        <div class="header">
+                            {{"HOME.INDEPENDENT_DIRECTOR"|translate}}
+                        </div>
+                        <div class="body">
+                            {{"HOME.LEADING_THE_TEAM"|translate}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- new section -->
+     <section id="Meet-the-team" fxHide.lt-md="true">
+        <div class="row">
+            <div class="col col-lg-4 left">
+
+            </div>
+            <div class="col col-lg-8 right">
+                <div class="title">{{"HOME.MEET_THE_TEAM"|translate}}</div>
+                <div>
+                    <img src="assets/images/bc-logo-color2@2x.png">
+                </div>
+            </div>
+            <div class="profile profile-sam" data-aos="fade-up">
+                <div class="profile-left">
+                    <div class="avatar">
+                        <img src="assets/images/investor.png">
+                    </div>
+                    <div class="name">
+                        {{"HOME.INVESTOR_NAME"|translate}}
+                    </div>
+                </div>
+                <div class="profile-right">
+                    <div class="header">
+                        {{"HOME.INVESTOR_HEADER"|translate}}
+                    </div>
+                    <div class="body">
+                        {{"HOME.INVESTOR_BODY"|translate}}
+                    </div>
+                </div>
+            </div>
+            <div class="profile profile-layla" data-aos="fade-up">
+                <div class="profile-left">
+                    <div class="avatar">
+                        <img src="assets/images/advisor.png">
+                    </div>
+                    <div class="name">
+                        {{"HOME.ADVISOR_NAME"|translate}}
+                    </div>
+                </div>
+                <div class="profile-right">
+                    <div class="header">
+                        {{"HOME.ADVISOR_HEADER"|translate}}
+                    </div>
+                    <div class="body">
+                        {{"HOME.ADVISOR_BODY"|translate}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="Meet-the-team-mobile" fxHide.gt-sm="true">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="profile-left">
+                        <div class="avatar">
+                            <img src="assets/images/investor.png">
+                        </div>
+                        <div class="name">
+                            {{"HOME.INVESTOR_NAME"|translate}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="profile-right">
+                        <div class="header">
+                            {{"HOME.INVESTOR_HEADER"|translate}}
+                        </div>
+                        <div class="body">
+                            {{"HOME.INVESTOR_BODY"|translate}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px;">
+                <div class="col-md-6">
+                    <div class="profile-left">
+                        <div class="avatar">
+                            <img src="assets/images/advisor.png">
+                        </div>
+                        <div class="name">
+                            {{"HOME.ADVISOR_NAME"|translate}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="profile-right">
+                        <div class="header">
+                            {{"HOME.ADVISOR_HEADER"|translate}}
+                        </div>
+                        <div class="body">
+                            {{"HOME.ADVISOR_BODY"|translate}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="partners">
+        <div class="green-line" style="margin: 0 auto 24px;"></div>
+        <header class="section-header">
+            <p class="" style="text-align: center;">
+                {{"HOME.PARTNERS"|translate}}
+            </p>
+        </header>
+        <div class="container">
+            <img src="assets/images/partners.png">
+        </div>
+    </section>
+</main>
+

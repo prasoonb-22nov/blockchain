@@ -1,0 +1,17 @@
+<mat-card *ngIf="hero" class="hero-card">
+    <mat-card-header>
+        <div (click)="seeHeroDetails(hero)" [ngStyle]="{'background-image': 'url(' + hero.avatarThumbnailUrl + ')'}" class="hero-header__image"
+             mat-card-avatar></div>
+        <mat-card-title (click)="seeHeroDetails(hero)">{{hero.name}}</mat-card-title>
+        <mat-card-subtitle (click)="seeHeroDetails(hero)">{{hero.alterEgo}}</mat-card-subtitle>
+        <div class="flex-spacer"></div>
+        <div class="hero-actions">
+            {{hero.likes}}
+            <mat-icon (click)="like(hero)"
+                      [matTooltipPosition]="'above'"
+                      class="icon__like--red" matTooltip="{{(canVote ? 'canVote' : 'cannotVote') | translate}}">favorite
+            </mat-icon>
+        </div>
+    </mat-card-header>
+    <img (click)="seeHeroDetails(hero)" mat-card-image src="{{hero.avatarUrl}}">
+</mat-card>

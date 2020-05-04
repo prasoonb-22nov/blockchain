@@ -1,0 +1,12 @@
+<div>
+    <!--<app-header></app-header>-->
+    <router-outlet *ngIf="isOnline;else isOffline"></router-outlet>
+    <ng-template #isOffline>
+        <div>
+            <p class="offline-error">{{'offlineMessage' | translate}}&nbsp;&nbsp;&nbsp;<span>:&nbsp;)</span></p>
+        </div>
+    </ng-template>
+</div>
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+<app-footer></app-footer>
+

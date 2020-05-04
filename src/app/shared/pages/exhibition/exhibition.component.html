@@ -1,0 +1,343 @@
+<button type="button" id="mobile-nav-toggle" (click)="showMiniMenu()">
+    <i class="fa fa-bars" *ngIf="!showMenu"></i>
+    <i class="fa fa-times" *ngIf="showMenu"></i>
+</button>
+<nav id="mobile-nav" style="left: 0;" *ngIf="showMenu">
+    <ul>
+        <li class="menu-has-children language">
+            <a href="javascript:void(0);">{{"LANGUAGE"|translate}}</a>
+            <ul>
+                <li><a href="javascript:void(0);" (click)="changeEn();showMenu=false">English</a></li>
+                <li><a href="javascript:void(0);" (click)="changeCn();showMenu=false">简体中文</a></li>
+            </ul>
+        </li>
+        <li><a (click)="showMenu=false" [routerLink]="['/news']">{{"HEADER.NEWS"|translate}}</a></li>
+        <li><a (click)="showMenu=false" [routerLink]="['/courses']">{{"HEADER.EDUCATION"|translate}}</a></li>
+        <li><a (click)="showMenu=false" [routerLink]="['/exhibition']">{{"HEADER.EXHIBITION"|translate}}</a></li>
+        <li><a (click)="showMenu=false" [routerLink]="['/events']">{{"HEADER.EVENTS"|translate}}</a></li>
+        <li><a (click)="showMenu=false" [routerLink]="['/incubator']">{{"HEADER.INCUBATOR"|translate}}</a></li>
+    </ul>
+</nav>
+<div id="mobile-body-overly" style="display: block" *ngIf="showMenu"></div>
+<!--==========================
+  Header
+============================-->
+<header id="header">
+    <div class="container">
+
+        <div class="pull-left" id="logo">
+            <h1>
+                <a class="scrollto" routerLink="/">
+                    <div></div>
+                </a>
+            </h1>
+        </div>
+        <div class="pull-left dropdown bc-menu">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                {{"LANGUAGE"|translate}}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item" type="button" (click)="changeEn()">English</button>
+                <button class="dropdown-item" type="button" (click)="changeCn()">简体中文</button>
+            </div>
+        </div>
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <!--<li class="menu-has-children language">
+                    <a href="javascript:void(0);">{{"LANGUAGE"|translate}}</a>
+                    <ul>
+                        <li><a href="javascript:void(0);" (click)="changeEn();">English</a></li>
+                        <li><a href="javascript:void(0);" (click)="changeCn()">简体中文</a></li>
+                    </ul>
+                </li>-->
+                <li><a [routerLink]="['/news']">{{"HEADER.NEWS"|translate}}</a></li>
+                <li><a [routerLink]="['/courses']">{{"HEADER.EDUCATION"|translate}}</a></li>
+                <li class="menu-active"><a [routerLink]="['/exhibition']">{{"HEADER.EXHIBITION"|translate}}</a></li>
+                <li><a [routerLink]="['/events']">{{"HEADER.EVENTS"|translate}}</a></li>
+                <li><a (click)="showMenu=false" [routerLink]="['/incubator']">{{"HEADER.INCUBATOR"|translate}}</a></li>
+            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+
+<!--==========================
+  Intro Section
+============================-->
+<section id="intro" class="inner-top">
+    <div class="intro-container">
+        <div class="carousel  slide carousel-fade" data-ride="carousel" id="introCarousel">
+
+            <ol class="carousel-indicators"></ol>
+
+            <div class="carousel-inner" role="listbox">
+
+                <div class="carousel-item active inner-top"
+                     style="background-image: url('assets/images/exhibition/exhibition_banner.png');">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 style="font-size: 80px">{{"EXHIBITION.EXHIBITION"|translate}}</h2>
+
+                            <!--<a class="btn-get-started scrollto" href="#featured-services">Get Started</a>-->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <a class="carousel-control-prev" data-slide="prev" href="#introCarousel" role="button">
+                <span aria-hidden="true" class="carousel-control-prev-icon ion-chevron-left"></span>
+                <span class="sr-only">{{"EXHIBITION.PREVIOUS"|translate}}</span>
+            </a>
+
+            <a class="carousel-control-next" data-slide="next" href="#introCarousel" role="button">
+                <span aria-hidden="true" class="carousel-control-next-icon ion-chevron-right"></span>
+                <span class="sr-only">{{"EXHIBITION.NEXT"|translate}}</span>
+            </a>
+
+        </div>
+    </div>
+</section><!-- #intro -->
+
+<section id="exhibition" class="exhibition-bg">
+    <div class="container exhibition-content">
+        <div class="row">
+            <div class="col-sm-12 col-lg-6 col-md-6 filter-app" data-aos="fade-right">
+                <div class="exhibition-line-card"></div>
+                <h4>
+                    {{"EXHIBITION.YEARS_DEVELOPMENT"|translate}}
+                </h4>
+                <p>
+                    {{"EXHIBITION.TECHNOLOGY_CAN_BE"|translate}}
+                </p>
+                <p>{{"EXHIBITION.WHEN_VARIOUS"|translate}}</p>
+                <p class="pb-5">{{"EXHIBITION.BLOCKCHAIN_CENTRE"|translate}}</p>
+            </div>
+            <div class="col-sm-12 col-lg-6 col-md-6 filter-app" data-aos="fade-left">
+                <img class="exhibition-left-img img-fluid" src="assets/images/exhibition/tenblockshine.png"/>
+            </div>
+        </div>
+    </div>
+    <div class="exhibition-card"></div>
+</section>
+
+<section id="part-exhibition" class="exhibition-bg">
+    <div class="container">
+
+        <div class="row portfolio-container">
+
+            <div class="col-sm-12 col-lg-4 col-md-6 portfolio-item filter-app" data-aos="fade-up">
+
+                <a href="assets/images/exhibition/intestellarBus/intestellarBus1.jpg" data-lightbox="visual-media"
+                   data-title="{{'EXHIBITION.INTESTELLAR_BUS'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.INTERSTELLAR_BUS'|translate}}</div>">
+                    <div class="portfolio-wrap">
+                        <div>
+                            <img src="assets/images/exhibition/1.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="portfolio-info">
+                            <h4>{{"EXHIBITION.INTESTELLAR_BUS"|translate}}</h4>
+                            <p>{{"EXHIBITION.CAN_THE_BLOCKCHAIN"|translate}}</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="assets/images/exhibition/intestellarBus/intestellarBus2.jpg" data-lightbox="visual-media"
+                   data-title="{{'EXHIBITION.INTESTELLAR_BUS'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.INTERSTELLAR_BUS'|translate}}</div>">
+                </a>
+                <a href="assets/images/exhibition/intestellarBus/intestellarBus3.jpg" data-lightbox="visual-media"
+                   data-title="{{'EXHIBITION.INTESTELLAR_BUS'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.INTERSTELLAR_BUS'|translate}}</div>">
+                </a>
+            </div>
+
+            <div class="col-sm-12 col-lg-4 col-md-6 portfolio-item filter-web" data-aos="fade-up">
+                <a href="assets/images/exhibition/honeycombParty/honeycombParty1.jpg"
+                   data-lightbox="honeycombParty"
+                   data-title="{{'EXHIBITION.HONEYCOMB_PARTY'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.USE_THE'|translate}}</div>">
+                    <div class="portfolio-wrap">
+                        <div>
+                            <img src="assets/images/exhibition/2.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="portfolio-info">
+                            <h4>{{"EXHIBITION.HONEYCOMB_PARTY"|translate}}</h4>
+                            <p>{{"EXHIBITION.DANCE_WITH"|translate}}</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="assets/images/exhibition/honeycombParty/honeycombParty2.jpg"
+                   data-lightbox="honeycombParty"
+                   data-title="{{'EXHIBITION.HONEYCOMB_PARTY'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.USE_THE'|translate}}</div>">
+                </a>
+            </div>
+
+            <div class="col-sm-12 col-lg-4 col-md-6 portfolio-item filter-app" data-aos="fade-up">
+                <a href="assets/images/exhibition/diamondMirror/diamondMirror1.jpg"
+                   data-lightbox="diamondMirror"
+                   data-title="{{'EXHIBITION.DIAMOND_MIRROR'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.USE_THE'|translate}}</div>">
+                    <div class="portfolio-wrap">
+                        <div>
+                            <img src="assets/images/exhibition/3.png" class="img-fluid" alt="">
+                        </div>
+
+                        <div class="portfolio-info">
+                            <h4>{{"EXHIBITION.DIAMOND_MIRROR"|translate}}</h4>
+                            <p>{{"EXHIBITION.WITH_THE_SHAPE"|translate}}</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="assets/images/exhibition/diamondMirror/diamondMirror2.jpg"
+                   data-lightbox="diamondMirror"
+                   data-title="{{'EXHIBITION.DIAMOND_MIRROR'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.EMBRACE_TECHNOLOGY'|translate}}</div>">
+                </a>
+                <a href="assets/images/exhibition/diamondMirror/diamondMirror3.jpeg"
+                   data-lightbox="diamondMirror"
+                   data-title="{{'EXHIBITION.DIAMOND_MIRROR'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.EMBRACE_TECHNOLOGY'|translate}}</div>">
+                </a>
+                <a href="assets/images/exhibition/diamondMirror/diamondMirror4.jpg"
+                   data-lightbox="diamondMirror"
+                   data-title="{{'EXHIBITION.DIAMOND_MIRROR'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.EMBRACE_TECHNOLOGY'|translate}}</div>">
+                </a>
+                <a href="assets/images/exhibition/diamondMirror/diamondMirror5.jpg"
+                   data-lightbox="diamondMirror"
+                   data-title="{{'EXHIBITION.DIAMOND_MIRROR'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.EMBRACE_TECHNOLOGY'|translate}}</div>">
+                </a>
+            </div>
+
+            <div class="col-sm-12 col-lg-4 col-md-6 portfolio-item filter-card" data-aos="fade-up">
+                <a href="assets/images/exhibition/csr/CSR1.jpeg" data-lightbox="csr"
+                   data-title="{{'EXHIBITION.CSR_EXHIBITION'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.AT_THE_BLOCKCHAIN'|translate}}</div>">
+                    <div class="portfolio-wrap">
+                        <div>
+                            <img src="assets/images/exhibition/4.png" class="img-fluid" alt="">
+                        </div>
+
+                        <div class="portfolio-info">
+                            <h4>{{"EXHIBITION.CSR_EXHIBITION"|translate}}</h4>
+                            <p>{{"EXHIBITION.EXPLORE_THE_FUTURE"|translate}}</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="assets/images/exhibition/csr/CSR2.jpeg" data-lightbox="csr"
+                   data-title="{{'EXHIBITION.CSR_EXHIBITION'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.AT_THE_BLOCKCHAIN'|translate}}</div>">
+                </a>
+                <a href="assets/images/exhibition/csr/CSR3.jpeg" data-lightbox="csr"
+                   data-title="{{'EXHIBITION.CSR_EXHIBITION'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.AT_THE_BLOCKCHAIN'|translate}}</div>">
+                </a>
+                <a href="assets/images/exhibition/csr/CSR7.jpeg" data-lightbox="csr"
+                   data-title="{{'EXHIBITION.CSR_EXHIBITION'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.AT_THE_BLOCKCHAIN'|translate}}</div>">
+                </a>
+                <a href="assets/images/exhibition/csr/CSR8.jpeg" data-lightbox="csr"
+                   data-title="{{'EXHIBITION.CSR_EXHIBITION'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.AT_THE_BLOCKCHAIN'|translate}}</div>">
+                </a>
+                <a href="assets/images/exhibition/csr/CSR10.jpeg" data-lightbox="csr"
+                   data-title="{{'EXHIBITION.CSR_EXHIBITION'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.AT_THE_BLOCKCHAIN'|translate}}</div>">
+                </a>
+                <a href="assets/images/exhibition/csr/CSR12.jpeg" data-lightbox="csr"
+                   data-title="{{'EXHIBITION.CSR_EXHIBITION'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.AT_THE_BLOCKCHAIN'|translate}}</div>">
+                </a>
+                <a href="assets/images/exhibition/csr/CSR14.jpeg" data-lightbox="csr"
+                   data-title="{{'EXHIBITION.CSR_EXHIBITION'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.AT_THE_BLOCKCHAIN'|translate}}</div>">
+                </a>
+                <a href="assets/images/exhibition/csr/CSR16.jpeg" data-lightbox="csr"
+                   data-title="{{'EXHIBITION.CSR_EXHIBITION'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.AT_THE_BLOCKCHAIN'|translate}}</div>">
+                </a>
+            </div>
+
+            <div class="col-sm-12 col-lg-4 col-md-6 portfolio-item filter-web" data-aos="fade-up">
+                <a href="assets/images/exhibition/futuristicLights/futuristicLights1.jpg"
+                   data-lightbox="futuristicLights"
+                   data-title="{{'EXHIBITION.FUTURISTIC_LIGHTS'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.THE_EMOTIONS'|translate}}</div>">
+                    <div class="portfolio-wrap">
+                        <div>
+                            <img src="assets/images/exhibition/5.png" class="img-fluid" alt="">
+
+                        </div>
+
+                        <div class="portfolio-info">
+                            <h4>{{"EXHIBITION.FUTURISTIC_LIGHTS"|translate}}</h4>
+                            <p>{{"EXHIBITION.THE_INSPIRATION"|translate}}</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="assets/images/exhibition/futuristicLights/futuristicLights2.jpg"
+                   data-lightbox="futuristicLights"
+                   data-title="{{'EXHIBITION.FUTURISTIC_LIGHTS'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.THE_EMOTIONS'|translate}}</div>">
+                </a>
+                <a href="assets/images/exhibition/futuristicLights/futuristicLights3.jpg"
+                   data-lightbox="futuristicLights"
+                   data-title="{{'EXHIBITION.FUTURISTIC_LIGHTS'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.THE_EMOTIONS'|translate}}</div>">
+                </a>
+                <a href="assets/images/exhibition/futuristicLights/futuristicLights4.jpg"
+                   data-lightbox="futuristicLights"
+                   data-title="{{'EXHIBITION.FUTURISTIC_LIGHTS'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.THE_EMOTIONS'|translate}}</div>">
+                </a>
+            </div>
+
+            <div class="col-sm-12 col-lg-4 col-md-6 portfolio-item filter-app" data-aos="fade-up">
+                <a href="assets/images/exhibition/staircaseStars/staircaseStars.jpeg"
+                   data-lightbox="staircaseStars"
+                   data-title="{{'EXHIBITION.STAIRCASE_STARS'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.THE_PERFECT'|translate}}</div>">
+                    <div class="portfolio-wrap">
+                        <div>
+                            <img src="assets/images/exhibition/6.png" class="img-fluid" alt="">
+                        </div>
+
+                        <div class="portfolio-info">
+                            <h4>{{"EXHIBITION.STAIRCASE_STARS"|translate}}</h4>
+                            <p>{{"EXHIBITION.THE_CREATIVE"|translate}}</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="assets/images/exhibition/staircaseStars/staircaseStars1.jpg"
+                   data-lightbox="staircaseStars"
+                   data-title="{{'EXHIBITION.STAIRCASE_STARS'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.THE_PERFECT'|translate}}</div>">
+                </a>
+                <a href="assets/images/exhibition/staircaseStars/staircaseStars2.jpg"
+                   data-lightbox="staircaseStars"
+                   data-title="{{'EXHIBITION.STAIRCASE_STARS'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.THE_PERFECT'|translate}}</div>">
+                </a>
+                <a href="assets/images/exhibition/staircaseStars/staircaseStars3.jpg"
+                   data-lightbox="staircaseStars"
+                   data-title="{{'EXHIBITION.STAIRCASE_STARS'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.THE_PERFECT'|translate}}</div>">
+                </a>
+                <a href="assets/images/exhibition/staircaseStars/staircaseStars4.jpg"
+                   data-lightbox="staircaseStars"
+                   data-title="{{'EXHIBITION.STAIRCASE_STARS'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.THE_PERFECT'|translate}}</div>">
+                </a>
+                <a href="assets/images/exhibition/staircaseStars/staircaseStars5.jpg"
+                   data-lightbox="staircaseStars"
+                   data-title="{{'EXHIBITION.STAIRCASE_STARS'|translate}}
+                   <div class='single-event-content'>{{'EXHIBITION.THE_PERFECT'|translate}}</div>">
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</section><!-- #portfolio -->

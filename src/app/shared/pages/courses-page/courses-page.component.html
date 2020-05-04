@@ -1,0 +1,194 @@
+<button type="button" id="mobile-nav-toggle" (click)="showMiniMenu()">
+    <i class="fa fa-bars" *ngIf="!showMenu"></i>
+    <i class="fa fa-times" *ngIf="showMenu"></i>
+</button>
+<nav id="mobile-nav" style="left: 0;" *ngIf="showMenu">
+    <ul>
+        <!-- <li class="menu-has-children language">
+            <a href="javascript:void(0);">{{"LANGUAGE"|translate}}</a>
+            <ul>
+                <li><a href="javascript:void(0);" (click)="changeEn();showMenu=false">English</a></li>
+                <li><a href="javascript:void(0);" (click)="changeCn();showMenu=false">简体中文</a></li>
+            </ul>
+        </li> -->
+       <!--  <li><a (click)="showMenu=false" [routerLink]="['/news']">{{"HEADER.NEWS"|translate}}</a></li> -->
+        <li><a (click)="showMenu=false" [routerLink]="['/courses']">{{"HEADER.EDUCATION"|translate}}</a></li>
+       <!--  <li><a (click)="showMenu=false" [routerLink]="['/exhibition']">{{"HEADER.EXHIBITION"|translate}}</a></li> -->
+        <li><a (click)="showMenu=false" [routerLink]="['/events']">{{"HEADER.EVENTS"|translate}}</a></li>
+        <li><a (click)="showMenu=false" [routerLink]="['/incubator']">{{"HEADER.INCUBATOR"|translate}}</a></li>
+    </ul>
+</nav>
+<div id="mobile-body-overly" style="display: block" *ngIf="showMenu"></div>
+<header id="header">
+    <div class="container">
+        <div class="pull-left" id="logo">
+            <h1>
+                <a class="scrollto" routerLink="/">
+                    <div></div>
+                </a>
+            </h1>
+        </div>
+        <!-- <div class="pull-left dropdown bc-menu">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                {{"LANGUAGE"|translate}}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item" type="button" (click)="changeEn()">English</button>
+                <button class="dropdown-item" type="button" (click)="changeCn()">简体中文</button>
+            </div>
+        </div> -->
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <!-- <li class="menu-has-children language">
+                    <a href="javascript:void(0);">{{"LANGUAGE"|translate}}</a>
+                    <ul>
+                        <li><a href="javascript:void(0);" (click)="changeEn();">English</a></li>
+                        <li><a href="javascript:void(0);" (click)="changeCn()">简体中文</a></li>
+                    </ul>
+                </li> -->
+                <!-- <li><a [routerLink]="['/news']">{{"HEADER.NEWS"|translate}}</a></li> -->
+                <li class="menu-active"><a [routerLink]="['/courses']">{{"HEADER.EDUCATION"|translate}}</a></li>
+                <!-- <li><a [routerLink]="['/exhibition']">{{"HEADER.EXHIBITION"|translate}}</a></li> -->
+                <li><a [routerLink]="['/events']">{{"HEADER.EVENTS"|translate}}</a></li>
+                <li><a [routerLink]="['/incubator']">{{"HEADER.INCUBATOR"|translate}}</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section id="intro" class="inner-top">
+    <div class="intro-container">
+        <div class="carousel  slide carousel-fade" data-ride="carousel" id="introCarousel">
+            <ol class="carousel-indicators"></ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active inner-top"
+                     style="background-image: url('assets/images/courses/courses_bc.png');">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 class="courses-title">{{"COURSES.COURSES"|translate}}</h2>
+                            <div class="courses-title-content">
+                                {{"COURSES.THE_BLOCKCHAIN"|translate}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="courses">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                <div class="courses-card">
+                    <a href="assets/images/courses/basicCourse/1.jpg" data-lightbox="diamondMirror">
+                        <div class="img">
+                            <img src="assets/images/courses/basic-course.png" alt="" class="courses-images">
+                        </div>
+                        <div class="container">
+                            <h2 class="title">{{"COURSES.BASIC_COURSE"|translate}}</h2>
+                            <p>
+                                {{"COURSES.BLOCKCHAIN_TECHNOLOGY"|translate}}
+                            </p>
+                        </div>
+                    </a>
+                    <a href="assets/images/courses/basicCourse/2.jpeg" data-lightbox="diamondMirror">
+                    </a>
+                    <a href="assets/images/courses/basicCourse/3.jpg" data-lightbox="diamondMirror">
+                    </a>
+                    <!-- <div class="container play-box">
+                        <hr class="basic-line">
+                        <audio #audioOption>
+                            <source src='assets/audio/blockchain.mp3' type="audio/mp3">
+                        </audio>
+                        <div (click)="onAudioPlay()" *ngIf="!audioPlaying" class="play play-button">
+                            <h5 class="free-try">{{"COURSES.FREE_TRY"|translate}}</h5>
+                        </div>
+                        <div (click)="onAudioStop()" *ngIf="audioPlaying" class="play pause-button">
+                            <h5 class="free-try">{{"COURSES.FREE_TRY"|translate}}</h5>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                <a href="assets/images/courses/intermediateCourse/in1.jpg" data-lightbox="intermediateCourse">
+                    <div class="courses-card">
+                        <div class="img">
+                            <img src="assets/images/courses/intermediate-course.png" alt="" class="courses-images">
+                        </div>
+                        <div class="container">
+                            <h2 class="title">{{"COURSES.INTERMEDIATE_COURSE"|translate}}</h2>
+                            <p>
+                                {{"COURSES.FOR_THOSE_WHO"|translate}}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <a href="assets/images/courses/intermediateCourse/in2.jpg" data-lightbox="intermediateCourse">
+                </a>
+                <a href="assets/images/courses/intermediateCourse/in3.jpg" data-lightbox="intermediateCourse">
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                <a href="assets/images/courses/bootCamp/boot1.jpg" data-lightbox="bootCamp">
+                    <div class="courses-card">
+                        <div class="img">
+                            <img src="assets/images/courses/boot-camp.png" alt="" class="courses-images">
+                        </div>
+                        <div class="container">
+                            <h2 class="title">{{"COURSES.BOOT_CAMP"|translate}}</h2>
+                            <p>
+                                {{"COURSES.ENTREPRENEURS"|translate}}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <a href="assets/images/courses/bootCamp/boot2.jpg" data-lightbox="bootCamp">
+                </a>
+                <a href="assets/images/courses/bootCamp/boot3.jpg" data-lightbox="bootCamp">
+                </a>
+                <a href="assets/images/courses/bootCamp/boot4.jpeg" data-lightbox="bootCamp">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="community">
+    <div class="community-left" data-aos="fade-right">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-9 community-title">
+                    <div><img src="assets/images/courses/symbol.png" width="14%"></div>
+                    <div class="community-title-line"></div>
+                    <h4 class="open-source">{{"COURSES.OPEN_SOURCE"|translate}}</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                </div>
+                <div class="col-md-6">
+                    <div class="community-tip">
+                        <p>
+                            {{"COURSES.BLOCKCHAIN_CENTRE"|translate}}
+                        </p>
+                        <p>{{"COURSES.IF_YOU"|translate}}</p>
+                        <a href="mailto:contact@blockchaincentreglobal.com" target="_blank">education@blockchaincentreglobal.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="community-right" data-aos="fade-left">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-11">
+                    <img src="assets/images/courses/bc-logo.png" class="bc-logo">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

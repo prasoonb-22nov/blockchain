@@ -1,0 +1,223 @@
+<button type="button" id="mobile-nav-toggle" (click)="showMiniMenu()">
+    <i class="fa fa-bars" *ngIf="!showMenu"></i>
+    <i class="fa fa-times" *ngIf="showMenu"></i>
+</button>
+<nav id="mobile-nav" style="left: 0;" *ngIf="showMenu">
+    <ul>
+        <li class="menu-has-children language">
+            <!-- <a href="javascript:void(0);">{{"LANGUAGE"|translate}}</a> -->
+            <ul>
+                <li><a href="javascript:void(0);" (click)="changeEn();showMenu=false">English</a></li>
+                <!-- <li><a href="javascript:void(0);" (click)="changeCn();showMenu=false">简体中文</a></li> -->
+            </ul>
+        </li>
+        <li><a (click)="showMenu=false" [routerLink]="['/news']">{{"HEADER.NEWS"|translate}}</a></li>
+        <li><a (click)="showMenu=false" [routerLink]="['/courses']">{{"HEADER.EDUCATION"|translate}}</a></li>
+        <li><a (click)="showMenu=false" [routerLink]="['/exhibition']">{{"HEADER.EXHIBITION"|translate}}</a></li>
+        <li><a (click)="showMenu=false" [routerLink]="['/events']">{{"HEADER.EVENTS"|translate}}</a></li>
+        <li><a (click)="showMenu=false" [routerLink]="['/incubator']">{{"HEADER.INCUBATOR"|translate}}</a></li>
+    </ul>
+</nav>
+<div id="mobile-body-overly" style="display: block" *ngIf="showMenu"></div>
+<!--==========================
+  Header
+============================-->
+<header id="header">
+    <div class="container">
+
+        <div class="pull-left" id="logo">
+            <h1>
+                <a class="scrollto" routerLink="/">
+                    <div></div>
+                </a>
+            </h1>
+        </div>
+
+        <!-- <div class="pull-left dropdown bc-menu">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                {{"LANGUAGE"|translate}}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item" type="button" (click)="changeEn()">English</button>
+                <button class="dropdown-item" type="button" (click)="changeCn()">简体中文</button>
+            </div>
+        </div> -->
+
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <!--<li class="menu-has-children language">
+                    <a href="javascript:void(0);">{{"LANGUAGE"|translate}}</a>
+                    <ul>
+                        <li><a href="javascript:void(0);" (click)="changeEn();">English</a></li>
+                        <li><a href="javascript:void(0);" (click)="changeCn()">简体中文</a></li>
+                    </ul>
+                </li>-->
+                <li class="menu-active"><a [routerLink]="['/news']">{{"HEADER.NEWS"|translate}}</a></li>
+                <li><a [routerLink]="['/courses']">{{"HEADER.EDUCATION"|translate}}</a></li>
+                <li><a [routerLink]="['/exhibition']">{{"HEADER.EXHIBITION"|translate}}</a></li>
+                <li><a [routerLink]="['/events']">{{"HEADER.EVENTS"|translate}}</a></li>
+                <li><a [routerLink]="['/incubator']">{{"HEADER.INCUBATOR"|translate}}</a></li>
+            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+
+<!--==========================
+  Intro Section
+============================-->
+<section id="intro" class="inner-top">
+    <div class="intro-container">
+        <div class="carousel  slide carousel-fade" data-ride="carousel" id="introCarousel">
+
+            <ol class="carousel-indicators"></ol>
+
+            <div class="carousel-inner" role="listbox">
+
+                <div class="carousel-item active inner-top"
+                     style="background-image: url('assets/images/news/news-banner.png');">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 style="font-size: 80px">{{"HEADER.NEWS"|translate}}</h2>
+
+                            <!--<a class="btn-get-started scrollto" href="#featured-services">Get Started</a>-->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <a class="carousel-control-prev" data-slide="prev" href="#introCarousel" role="button">
+                <span aria-hidden="true" class="carousel-control-prev-icon ion-chevron-left"></span>
+                <span class="sr-only">{{"NEWS.PREVIOUS"|translate}}</span>
+            </a>
+
+            <a class="carousel-control-next" data-slide="next" href="#introCarousel" role="button">
+                <span aria-hidden="true" class="carousel-control-next-icon ion-chevron-right"></span>
+                <span class="sr-only">{{"NEWS.NEXT"|translate}}</span>
+            </a>
+
+        </div>
+    </div>
+</section><!-- #intro -->
+
+<section id="news-content" class="news-bg">
+
+
+    <div class="container" style="position: relative;">
+        <div class="news-line">
+            <div class="green-line"></div>
+        </div>
+        <p class="news-sub" style="text-align: left;">
+            {{"NEWS.SHANGHAI_BC"|translate}}
+        </p>
+        <h3>{{"NEWS.TACHION_TITLE"|translate}}</h3>
+        <div class="news-title">
+            <p>{{"NEWS.CONTENT"|translate}}</p>
+        </div>
+        <div class="news-more">
+            <a [routerLink]="['/news/5c752cf0b03cbb6b3a798f6f']" *ngIf="language==='zh-cn'">{{"NEWS.MORE"|translate}}</a>
+            <a [routerLink]="['/news/5c75fc17b03cbb6b3a7990f1']" *ngIf="language==='en'">{{"NEWS.MORE"|translate}}</a>
+        </div>
+        <div class="scroll-images new-scroll">
+            <div class="item-container scroll-img">
+                <div class="items" data-aos="fade-left">
+                    <div class="item">
+                        <img src="assets/images/news/banner_1.png" alt="" class="item__img">
+                        <!--<a href="javascript:void(0);" class="item__link">{{"NEWS.EVENTS_COMMUNITY"|translate}}</a>-->
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/news/banner_2.png" alt="" class="item__img">
+                        <!--<a href="javascript:void(0);" class="item__link">{{"NEWS.EDUCATION_TRAINING"|translate}}</a>-->
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/news/banner_3.png" alt="" class="item__img">
+                        <!--<a href="javascript:void(0);" class="item__link">{{"NEWS.INCUBATION_PROGRAM"|translate}}</a>-->
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/news/banner_4.png" alt="" class="item__img">
+                        <!--<a href="javascript:void(0);" class="item__link">{{"NEWS.TALENT_POOL"|translate}}</a>-->
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/news/banner_1.png" alt="" class="item__img">
+                        <!--<a href="javascript:void(0);" class="item__link">{{"NEWS.EVENTS_COMMUNITY"|translate}}</a>-->
+                    </div>
+                </div>
+
+                <div style="position: absolute; bottom: -15px; left: 32px;">
+                    <button class="slider slider--left scroll-disable lf-button">
+                        <i class="fa fa-angle-left"></i>
+                    </button>
+                    <button class="slider slider--right lr-button">
+                        <i class="fa fa-angle-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="part-news">
+    <div class="green-line" style="margin: 0 auto;"></div>
+    <h4 class="part-news-title">{{"NEWS.ALL_NEWS"|translate}}</h4>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 text-center " *ngFor="let item of news;">
+                <div class="text-left  news-item d-flex flex-wrap align-content-center">
+                    <a routerLink="/news/{{item.id}}" *ngIf="language==='en'" [ngClass]="{'news-margin-top': item.title.length < 80 }" class="news-link news-top">{{item.title}}</a>
+                    <a routerLink="/news/{{item.id}}" *ngIf="language==='zh-cn'" [ngClass]="{'news-margin-top-cn': item.title.length < 50 }" class="news-link news-top">{{item.title}}</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class=" col-lg-12 col-md-12 col-sm-12 text-center" *ngIf="news.length !==0">
+                <nav aria-label="Page navigation example" style="display: inline-flex;">
+                    <ul class="pagination" style="position: relative;margin: 0 auto;margin-top: 40px!important">
+                        <li class="page-item">
+                            <button class="page-link" (click)="handlePaginatePrev()" [disabled]="!has_prev"
+                                    [ngClass]="{ 'not-allowed': has_prev === false }">
+                                <span aria-hidden="true"><i class="fa fa-angle-left"></i></span>
+                                <span class="sr-only">{{"NEWS.PREVIOUS"|translate}}</span>
+                            </button>
+                            <!--<a class="page-link" href="#" aria-label="Previous">-->
+                            <!--<span aria-hidden="true">&lt;</span>-->
+                            <!--<span class="sr-only">Previous</span>-->
+                            <!--</a>-->
+                        </li>
+
+                        <li class="page-item" *ngIf="page - 2 > 0">
+                            <a class="page-link" (click)="loadNews(page - 2)">{{page - 2}}</a>
+                        </li>
+
+                        <li class="page-item" *ngIf="page - 1 > 0">
+                            <a class="page-link" (click)="loadNews(page - 1)">{{page - 1}}</a>
+                        </li>
+
+                        <li class="page-item active">
+                            <a class="page-link" (click)="loadNews(page)">{{ page }}</a>
+                        </li>
+
+                        <li class="page-item" *ngIf="page + 1 <= pages">
+                            <a class="page-link" (click)="loadNews(page + 1)">{{page + 1}}</a>
+                        </li>
+
+                        <li class="page-item" *ngIf="page + 2 <= pages">
+                            <a class="page-link" (click)="loadNews(page + 2)">{{page + 2}}</a>
+                        </li>
+
+                        <li class="page-item">
+                            <button class="page-link" (click)="handlePaginateNext()" [disabled]="!has_next"
+                                    [ngClass]="{ 'not-allowed': has_next === false }">
+                                <span aria-hidden="true"><i class="fa fa-angle-right"></i></span>
+                                <span class="sr-only">{{"NEWS.PREVIOUS"|translate}}</span>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+</section><!-- #portfolio -->

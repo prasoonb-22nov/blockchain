@@ -1,0 +1,228 @@
+app-courses-page {
+  .courses-title {
+    font-size: 80px;
+    margin-top: 80px;
+    margin-bottom: 10px !important;
+  }
+
+  .courses-title-content {
+    font-size: 14px;
+    text-align: left;
+    font-weight: 400;
+    font-family: Poppins, sans-serif;
+    color: rgba(255, 255, 255, 1);
+    line-height: 25px;
+    opacity: 0.6;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #courses {
+    margin-top: 80px;
+  }
+
+  .courses-card {
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.11);
+    padding-bottom: 23px;
+    min-height: 550px;
+    margin-top: 20px;
+  }
+
+  .courses-card:hover {
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  .courses-card h2 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    text-align: center;
+    font-size: 28px;
+    font-family: Poppins, sans-serif;
+    color: rgba(26, 29, 53, 1);
+    font-weight: 600;
+  }
+
+  .courses-card p {
+    font-size: 14px;
+    font-family: Poppins, sans-serif;
+    color: rgba(131, 131, 131, 1);
+    line-height: 21px;
+    min-height: 184px;
+  }
+
+  .basic-line {
+    height: 1px;
+    background: rgba(237, 237, 237, 1);
+    border-top: none;
+  }
+
+  .play {
+    margin-top: 18px;
+    position: relative;
+    height: 40px;
+    width: 40px;
+    background-size: cover;
+  }
+
+  .play-img {
+    width: 40px;
+  }
+
+  .play-box:hover .free-try {
+    color: #32CCAD;
+  }
+
+  .play-box:hover .play-button {
+    background-image: url("src/assets/images/courses/player/icon_play_hover@2x.png");
+    cursor: pointer;
+  }
+  .play-box:hover .pause-button {
+    background-image: url("src/assets/images/courses/player/icon_pause_hover@2x.png");
+    cursor: pointer;
+  }
+
+  .free-try {
+    font-size: 18px;
+    font-family: Poppins, sans-serif;
+    color: #1A1D35;
+    font-weight: 600;
+    position: absolute;
+    top: 31%;
+    left: 121%;
+    width: 200%;
+  }
+
+  .play-button {
+    background-image: url("src/assets/images/courses/player/icon_play_normel@2x.png");
+  }
+
+  .pause-button {
+    background-image: url("src/assets/images/courses/player/icon_pause_normel@2x.png");
+  }
+
+  .courses-images {
+    width: 100%;
+  }
+
+  #community {
+    overflow-x: hidden;
+    padding: 120px 0 310px;
+    position: relative;
+  }
+
+  .community-left {
+    background-image: url("src/assets/images/courses/coursesBack.png");
+    width: 73%;
+    padding-top: 70px;
+    position: relative;
+    z-index: 100;
+    opacity: 0.8;
+  }
+
+  .community-right {
+    width: 69%;
+    position: absolute;
+    right: 0;
+    top: 300px;
+    background-color: #F6F6F6;
+    padding-bottom: 47px;
+  }
+
+  .bc-logo {
+    width: 42%;
+    max-width: 383px;
+    float: right;
+    margin-top: 47px;
+  }
+
+  .community-title {
+    color: #FFFFFF;
+  }
+
+  .community-title-line {
+    height: 4px;
+    background: #FFFFFF;
+    width: 72px;
+    margin-top: 20px;
+    margin-bottom: 24px;
+  }
+
+  .open-source {
+    font-size: 36px;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    color: #FFFFFF;
+  }
+
+  .community-tip {
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-top: 37px;
+    line-height: 20px;
+    margin-bottom: 65px;
+  }
+  .community-tip p {
+    opacity: 0.8;
+  }
+  .community-tip a {
+    text-decoration: underline !important;
+    color: #FFFFFF;
+    opacity: 0.8;
+    word-wrap: break-word;
+  }
+  .community-tip a:hover {
+    opacity: 1;
+  }
+
+  @media(max-width: 768px) {
+    .inner-top {
+      height: 100vh !important;
+    }
+    .courses-title-content {
+      font-size: 13px;
+    }
+  }
+  @media(max-width: 400px) {
+    #intro p {
+      font-size: 13px;
+    }
+    .courses-title-content {
+      font-size: 12px;
+    }
+  }
+}
+
+.mat-card {
+  box-shadow: none !important;
+}
+
+.mb-auto, .my-auto {
+  display: none;
+}
+
+.flex-fill {
+  display: none;
+}
+
+.mat-button {
+  width: 40px;
+  min-width: 40px !important;
+  height: 40px;
+  border-radius: 100% !important;
+  border: 1px solid #EDEDED !important;
+  padding: 0px 11px !important;
+
+  .mat-button-wrapper {
+    padding-left: 2px;
+
+    fa-icon {
+      font-size: 14px;
+    }
+  }
+
+  &:hover {
+    border: 1px solid #32CCAD !important;
+    color: #32CCAD !important;
+    opacity: 1 !important;
+  }
+}

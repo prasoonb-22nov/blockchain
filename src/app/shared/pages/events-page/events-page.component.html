@@ -1,0 +1,89 @@
+<button type="button" id="mobile-nav-toggle" (click)="showMiniMenu()">
+    <i class="fa fa-bars" *ngIf="!showMenu"></i>
+    <i class="fa fa-times" *ngIf="showMenu"></i>
+</button>
+<nav id="mobile-nav" style="left: 0;" *ngIf="showMenu">
+    <ul>
+        <!-- <li class="menu-has-children language">
+            <a href="javascript:void(0);">{{"LANGUAGE"|translate}}</a>
+            <ul>
+                <li><a href="javascript:void(0);" (click)="changeEn();showMenu=false">English</a></li>
+                <li><a href="javascript:void(0);" (click)="changeCn();showMenu=false">简体中文</a></li>
+            </ul>
+        </li> -->
+       <!--  <li><a (click)="showMenu=false" [routerLink]="['/news']">{{"HEADER.NEWS"|translate}}</a></li> -->
+        <li><a (click)="showMenu=false" [routerLink]="['/courses']">{{"HEADER.EDUCATION"|translate}}</a></li>
+        <!-- <li><a (click)="showMenu=false" [routerLink]="['/exhibition']">{{"HEADER.EXHIBITION"|translate}}</a></li> -->
+        <li><a (click)="showMenu=false" [routerLink]="['/events']">{{"HEADER.EVENTS"|translate}}</a></li>
+        <li><a (click)="showMenu=false" [routerLink]="['/incubator']">{{"HEADER.INCUBATOR"|translate}}</a></li>
+    </ul>
+</nav>
+<div id="mobile-body-overly" style="display: block" *ngIf="showMenu"></div>
+<header id="header">
+    <div class="container">
+        <div class="pull-left" id="logo">
+            <h1>
+                <a class="scrollto" routerLink="/">
+                    <div></div>
+                </a>
+            </h1>
+        </div>
+        <!-- <div class="pull-left dropdown bc-menu">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                {{"LANGUAGE"|translate}}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item" type="button" (click)="changeEn()">English</button>
+                <button class="dropdown-item" type="button" (click)="changeCn()">简体中文</button>
+            </div>
+        </div> -->
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <!--<li class="menu-has-children language">
+                    <a href="javascript:void(0);">{{"LANGUAGE"|translate}}</a>
+                    <ul>
+                        <li><a href="javascript:void(0);" (click)="changeEn();">English</a></li>
+                        <li><a href="javascript:void(0);" (click)="changeCn()">简体中文</a></li>
+                    </ul>
+                </li>-->
+               <!--  <li><a [routerLink]="['/news']">{{"HEADER.NEWS"|translate}}</a></li> -->
+                <li><a [routerLink]="['/courses']">{{"HEADER.EDUCATION"|translate}}</a></li>
+               <!--  <li><a [routerLink]="['/exhibition']">{{"HEADER.EXHIBITION"|translate}}</a></li> -->
+                <li class="menu-active"><a [routerLink]="['/events']">{{"HEADER.EVENTS"|translate}}</a></li>
+                <li><a [routerLink]="['/incubator']">{{"HEADER.INCUBATOR"|translate}}</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section id="intro" class="inner-top">
+    <div class="intro-container">
+        <div class="carousel  slide carousel-fade" data-ride="carousel" id="introCarousel">
+            <ol class="carousel-indicators"></ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active inner-top"
+                     style="background-image: url('assets/images/events/top-background.png');">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 class="event-title">{{"EVENTS.EVENTS"|translate}}</h2>
+                            <div class="event-title-content">
+                                {{"EVENTS.BLOCKCHAIN_CENTRE"|translate}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="events-card">
+    <div class="container">
+        <div class="row">
+
+          <a href="http://www.blockchaincentre.co.in:8080/event_reg.php" target="_blank"><img  src="assets/images/How Blockchain helps solve complex problems in India-1.png"></a>
+
+        </div>
+    </div>
+</section>

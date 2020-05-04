@@ -1,0 +1,84 @@
+<button type="button" id="mobile-nav-toggle" (click)="showMiniMenu()">
+    <i class="fa fa-bars" *ngIf="!showMenu"></i>
+    <i class="fa fa-times" *ngIf="showMenu"></i>
+</button>
+<nav id="mobile-nav" style="left: 0;" *ngIf="showMenu">
+    <ul>
+        <li class="menu-has-children language">
+            <a href="javascript:void(0);">{{"LANGUAGE"|translate}}</a>
+            <ul>
+                <li><a href="javascript:void(0);" (click)="changeEn();showMenu=false">English</a></li>
+                <li><a href="javascript:void(0);" (click)="changeCn();showMenu=false">简体中文</a></li>
+            </ul>
+        </li>
+        <li><a (click)="showMenu=false" [routerLink]="['/news']">{{"HEADER.NEWS"|translate}}</a></li>
+        <li><a (click)="showMenu=false" [routerLink]="['/courses']">{{"HEADER.EDUCATION"|translate}}</a></li>
+        <li><a (click)="showMenu=false" [routerLink]="['/exhibition']">{{"HEADER.EXHIBITION"|translate}}</a></li>
+        <li><a (click)="showMenu=false" [routerLink]="['/events']">{{"HEADER.EVENTS"|translate}}</a></li>
+        <li><a (click)="showMenu=false" [routerLink]="['/incubator']">{{"HEADER.INCUBATOR"|translate}}</a></li>
+    </ul>
+</nav>
+<div id="mobile-body-overly" style="display: block" *ngIf="showMenu"></div>
+<header id="header">
+    <div class="container">
+        <div class="pull-left" id="logo">
+            <h1>
+                <a class="scrollto" routerLink="/">
+                    <div></div>
+                </a>
+            </h1>
+        </div>
+        <div class="pull-left dropdown bc-menu">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                {{"LANGUAGE"|translate}}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item" type="button" (click)="changeEn()">English</button>
+                <button class="dropdown-item" type="button" (click)="changeCn()">简体中文</button>
+            </div>
+        </div>
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <!--<li class="menu-has-children language">
+                    <a href="javascript:void(0);">{{"LANGUAGE"|translate}}</a>
+                    <ul>
+                        <li><a href="javascript:void(0);" (click)="changeEn();">English</a></li>
+                        <li><a href="javascript:void(0);" (click)="changeCn()">简体中文</a></li>
+                    </ul>
+                </li>-->
+                <li class="menu-active"><a [routerLink]="['/news']">{{"HEADER.NEWS"|translate}}</a></li>
+                <li><a [routerLink]="['/courses']">{{"HEADER.EDUCATION"|translate}}</a></li>
+                <li><a [routerLink]="['/exhibition']">{{"HEADER.EXHIBITION"|translate}}</a></li>
+                <li><a [routerLink]="['/events']">{{"HEADER.EVENTS"|translate}}</a></li>
+                <li><a [routerLink]="['/incubator']">{{"HEADER.INCUBATOR"|translate}}</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!--==========================
+  Intro Section
+============================-->
+<section id="news-detail">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12 new-content">
+                <h3 class="title">{{title}}</h3>
+                <h4 class="pushedTime">{{author}}&nbsp;&nbsp;&nbsp;&nbsp;{{pushedTime | date: 'yyyy-MM-dd'}}</h4>
+                <div [innerHTML]='elementHtml'></div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 new-content">
+                <h6 class="recommend">{{"NEWS.RECOMMENDED"|translate}}</h6>
+                <ul class="recommend-content">
+                    <li *ngFor="let i of news">
+                        <div class="circle"></div>
+                        <a class="recommend-font" [routerLink]="['/news/'+i.id]">{{i.title}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+

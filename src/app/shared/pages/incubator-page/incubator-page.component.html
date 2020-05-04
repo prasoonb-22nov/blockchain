@@ -1,0 +1,153 @@
+<button type="button" id="mobile-nav-toggle" (click)="showMiniMenu()">
+    <i class="fa fa-bars" *ngIf="!showMenu"></i>
+    <i class="fa fa-times" *ngIf="showMenu"></i>
+</button>
+<nav id="mobile-nav" style="left: 0;" *ngIf="showMenu">
+    <ul>
+       <!--  <li class="menu-has-children language">
+            <a href="javascript:void(0);">{{"LANGUAGE"|translate}}</a>
+            <ul>
+                <li><a href="javascript:void(0);" (click)="changeEn();showMenu=false">English</a></li>
+                <li><a href="javascript:void(0);" (click)="changeCn();showMenu=false">简体中文</a></li>
+            </ul>
+        </li> -->
+       <!--  <li><a (click)="showMenu=false" [routerLink]="['/news']">{{"HEADER.NEWS"|translate}}</a></li> -->
+        <li><a (click)="showMenu=false" [routerLink]="['/courses']">{{"HEADER.EDUCATION"|translate}}</a></li>
+        <!-- <li><a (click)="showMenu=false" [routerLink]="['/exhibition']">{{"HEADER.EXHIBITION"|translate}}</a></li> -->
+        <li><a (click)="showMenu=false" [routerLink]="['/events']">{{"HEADER.EVENTS"|translate}}</a></li>
+        <li><a (click)="showMenu=false" [routerLink]="['/incubator']">{{"HEADER.INCUBATOR"|translate}}</a></li>
+    </ul>
+</nav>
+<div id="mobile-body-overly" style="display: block" *ngIf="showMenu"></div>
+<header id="header">
+    <div class="container">
+        <div class="pull-left" id="logo">
+            <h1>
+                <a class="scrollto" routerLink="/">
+                    <div></div>
+                </a>
+            </h1>
+        </div>
+      <!--   <div class="pull-left dropdown bc-menu">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                {{"LANGUAGE"|translate}}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item" type="button" (click)="changeEn()">English</button>
+                <button class="dropdown-item" type="button" (click)="changeCn()">简体中文</button>
+            </div>
+        </div> -->
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <!--<li class="menu-has-children language">
+                    <a href="javascript:void(0);">{{"LANGUAGE"|translate}}</a>
+                    <ul>
+                        <li><a href="javascript:void(0);" (click)="changeEn();">English</a></li>
+                        <li><a href="javascript:void(0);" (click)="changeCn()">简体中文</a></li>
+                    </ul>
+                </li>-->
+               <!--  <li><a [routerLink]="['/news']">{{"HEADER.NEWS"|translate}}</a></li> -->
+                <li><a [routerLink]="['/courses']">{{"HEADER.EDUCATION"|translate}}</a></li>
+                <!-- <li><a [routerLink]="['/exhibition']">{{"HEADER.EXHIBITION"|translate}}</a></li> -->
+                <li><a [routerLink]="['/events']">{{"HEADER.EVENTS"|translate}}</a></li>
+                <li class="menu-active"><a [routerLink]="['/incubator']">{{"HEADER.INCUBATOR"|translate}}</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section id="intro" class="inner-top">
+    <div class="intro-container">
+        <div class="carousel  slide carousel-fade" data-ride="carousel" id="introCarousel">
+            <ol class="carousel-indicators"></ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active inner-top incubator-top">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 class="courses-title">{{"INCUBATOR.INCUBATOR"|translate}}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="incubation-programs">
+    <div class="programs">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-5 col-sm-12 program-content" data-aos="fade-right">
+                <div class="news-line">
+                    <div class="green-line"></div>
+                </div>
+                <h3>{{"INCUBATOR.INCUBATOR_PROGRAMS"|translate}}</h3>
+                <p>{{"INCUBATOR.WITH_THE_GROWING"|translate}}</p>
+                <p>{{"INCUBATOR.WITH_OUR_GLOBAL"|translate}}</p>
+                <p>{{"INCUBATOR.STARTUPS_NEED"|translate}}</p>
+                <p>{{"INCUBATOR.JUST_AS_THE"|translate}}</p>
+            </div>
+            <div class="col-md-6 col-sm-12 program-img" data-aos="fade-left">
+                <img src="assets/images/incubator/incubationPrograms.png">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="incubator-projects">
+    <div class="green-line" style="margin: 0 auto;"></div>
+    <h2>{{"INCUBATOR.INCUBATOR_PROJECTS"|translate}}</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="single-project" data-aos="fade-up">
+                    <div class="single-project-img">
+                    <img src="assets/images/incubator/ruden.png">
+                    </div>
+                    <h5>{{"INCUBATOR.RUDEN_BLOCKCHAIN"|translate}}</h5>
+                    <p>{{"INCUBATOR.WHAT_JAPAN"|translate}}</p>
+                    <p>{{"INCUBATOR.WHY_LEVERAGING"|translate}}</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="single-project" data-aos="fade-up">
+                    <div class="single-project-img">
+                    <img src="assets/images/incubator/contentos.png">
+                    </div>
+                    <h5>{{"INCUBATOR.CONTENTOS"|translate}}</h5>
+                    <p>{{"INCUBATOR.WHAT_THE"|translate}}</p>
+                    <p>{{"INCUBATOR.WHY_CHANGING"|translate}}</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="single-project" data-aos="fade-up">
+                    <div class="single-project-img">
+                    <img src="assets/images/incubator/bastionPay.png">
+                    </div>
+                    <h5>{{"INCUBATOR.BASTION_PAY"|translate}}</h5>
+                    <p>{{"INCUBATOR.WHAT_THE_WORLD"|translate}}</p>
+                    <p>{{"INCUBATOR.WHY_POWERING"|translate}}</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="single-project" data-aos="fade-up">
+                    <div class="single-project-img">
+                    <img src="assets/images/incubator/penta.png">
+                    </div>
+                    <h5>{{"INCUBATOR.PENTA"|translate}}</h5>
+                    <p>{{"INCUBATOR.FIRST_BLOCKCHAIN"|translate}}</p>
+                    <p>{{"INCUBATOR.PAVING_THE_WAY"|translate}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right-logo">
+        <div class="row">
+            <div class="col-md-6"></div>
+            <div class="col-md-6 col-sm-12">
+                <img src="assets/images/incubator/logo.png">
+            </div>
+        </div>
+    </div>
+</section>
